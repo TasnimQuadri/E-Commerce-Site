@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;  
+position: relative;
+z-index: 1;
+}
+main::before{
+    content: "";
+    background-image:  url(back.webp);
+    background-position: center;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    opacity: 20%;
+    z-index: -1;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.product-image {
+    max-width: 100%;
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+}
+
+.product-details {
+    margin-top: 1em;
+}
+
+.product-name {
+    font-size: 2em;
+    margin: 0.5em 0;
+}
+
+.product-description {
+    margin: 0.5em 0;
+    font-size: 1.2em;
+}
+
+.product-price {
+    font-size: 1.5em;
+    color: #e91e63;
+    margin: 0.5em 0;
+}
+
+.cta-button {
+    padding: 0.8em 1.5em;
+    font-size: 1.2em;
+    color: white;
+    background-color: #e91e63;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #c2185b;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .product {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+    }
+
+    .product-image {
+        max-width: 50%;
+        margin-right: 2em;
+    }
+
+    .product-details {
+        max-width: 50%;
+    }
+}
